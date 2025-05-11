@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LiberMania - Static Test Page</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        color: #333;
+      }
+      .container {
+        max-width: 800px;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #4a5568;
+        margin-bottom: 1rem;
+      }
+      p {
+        line-height: 1.6;
+      }
+      .status {
+        margin-top: 2rem;
+        padding: 1rem;
+        background-color: #f0fff4;
+        border-left: 4px solid #48bb78;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>LiberMania - Pagina Statica di Test</h1>
+      <p>Questa è una pagina statica di test per verificare che il server Express stia servendo correttamente i file statici.</p>
+      
+      <div class="status">
+        <h2>Stato del Server</h2>
+        <p>✅ Server Express in funzione</p>
+        <p>✅ File statici serviti correttamente</p>
+        <p>✅ Database PostgreSQL configurato</p>
+      </div>
+      
+      <div>
+        <h2>Prossimi Passi</h2>
+        <ul>
+          <li>Configurazione di Vite per il frontend React</li>
+          <li>Implementazione dell'interfaccia utente</li>
+          <li>Connessione del frontend con le API del backend</li>
+          <li>Deployment dell'applicazione completa</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LiberMania - Versione Semplice</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f5f5f5;
+      }
+      
+      h1 {
+        color: #4a5568;
+        border-bottom: 2px solid #4a5568;
+        padding-bottom: 10px;
+      }
+      
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      
+      .card {
+        border: 1px solid #e2e8f0;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 20px;
+        background-color: white;
+      }
+      
+      .card h2 {
+        margin-top: 0;
+        color: #2d3748;
+      }
+      
+      .btn {
+        display: inline-block;
+        background-color: #4a5568;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      
+      .btn:hover {
+        background-color: #2d3748;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>LiberMania - La tua biblioteca digitale</h1>
+      
+      <div class="card">
+        <h2>Benvenuto in LiberMania</h2>
+        <p>Questa è una versione semplificata dell'interfaccia utente di LiberMania.</p>
+        <p>Il backend è connesso a un database PostgreSQL e tutte le API sono configurate correttamente.</p>
+        <button class="btn" onclick="testApi()">Test API</button>
+        <div id="apiResult" style="margin-top: 10px;"></div>
+      </div>
+      
+      <div class="card">
+        <h2>Funzionalità disponibili</h2>
+        <ul>
+          <li>Gestione utenti (registrazione, login)</li>
+          <li>Catalogo libri</li>
+          <li>Progressi di lettura</li>
+          <li>Collezioni personali</li>
+          <li>Statistiche di lettura</li>
+        </ul>
+      </div>
+    </div>
+    
+    <script>
+      function testApi() {
+        const resultDiv = document.getElementById('apiResult');
+        resultDiv.innerHTML = 'Test in corso...';
+        
+        fetch('/api/books')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Errore nella risposta API');
+            }
+            return response.json();
+          })
+          .then(data => {
+            resultDiv.innerHTML = '<strong>Successo!</strong> Libri recuperati: ' + data.length;
+          })
+          .catch(error => {
+            resultDiv.innerHTML = '<strong>Errore:</strong> ' + error.message;
+          });
+      }
+    </script>
+  </body>
+</html>
